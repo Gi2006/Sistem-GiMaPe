@@ -68,7 +68,7 @@ header('Location: ../../view/read/consultaCargo.php');
 </main>
 </center>   
     <footer>
-            Brenda Caroline, Gisele Araújo, Kauany Oliveira.
+            Gisele Araújo, Matheus Santos e Pedro Henrique.
     </footer>
 </body>
 </html>

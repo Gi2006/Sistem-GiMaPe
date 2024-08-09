@@ -12,7 +12,7 @@ INICIO DA CRIAÇÃO DE TABELA EM SQL
 create table funcionario 
 (
 	funcional int auto_increment not null primary key,
-    cpf char(11) not null unique ,
+    cpf char(11) not null unique,
     nome varchar(40) not null,
     telefone char(15) null,
     endereco varchar(70) not null

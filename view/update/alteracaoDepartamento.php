@@ -12,7 +12,7 @@
      crossorigin="anonymous"></script>
      <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body class="fundo">
 <header>
   <nav class="nav-header">
           <ul>
@@ -39,6 +39,7 @@
           </ul>
       </nav>
   </header>
+  <hr>
     <div class="container mt-5">
         <h2>Alterar Departamento</h2>
         <?php
@@ -65,5 +66,8 @@
         ?>
         <a href="../read/consultaDepartamento.php" class="btn btn-secondary mt-3">Voltar</a>
     </div>
+    <footer>
+            Gisele Araújo, Matheus Santos e Pedro Henrique.
+    </footer>
 </body>
 </html>

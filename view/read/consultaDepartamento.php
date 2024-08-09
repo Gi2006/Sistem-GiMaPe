@@ -13,7 +13,7 @@
         .container { display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 100px; }
     </style>
 </head>
-<body>
+<body class="fundo">
 <header>
         <nav class="nav-header">
           <ul>
@@ -40,6 +40,7 @@
           </ul>
       </nav>
 </header>
+<hr>
 <main>
     <center>
     <div>
@@ -75,7 +76,7 @@
     </center>
 </main>
 <footer>
-    Brenda Caroline, Gisele Araújo, Kauany Oliveira.
+            Gisele Araújo, Matheus Santos e Pedro Henrique.
 </footer>
 </body>
 </html>

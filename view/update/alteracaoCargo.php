@@ -12,7 +12,7 @@
      crossorigin="anonymous"></script>
      <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body class="fundo">
 <header>
     <nav class="nav-header">
           <ul>
@@ -39,6 +39,7 @@
           </ul>
       </nav>
   </header>
+  <hr>
     <div class="container">
         <h2>Alterar Cargo</h2>
         <?php
@@ -68,5 +69,8 @@
         ?>
         <a href="../read/consultaCargo.php" class="btn btn-secondary">Voltar</a>
     </div>
+    <footer>
+            Gisele Araújo, Matheus Santos e Pedro Henrique.
+    </footer>
 </body>
 </html>

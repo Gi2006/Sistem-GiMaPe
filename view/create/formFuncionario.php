@@ -15,7 +15,7 @@
      crossorigin="anonymous"></script>
      <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body class="fundo">
 <header>
   <nav class="nav-header">
           <ul>
@@ -42,6 +42,7 @@
           </ul>
       </nav>
   </header>
+  <hr>
     <main>
         <form method="POST" action="../../controller/create/recebeFuncionario.php">
           <section id="funcionario">
@@ -107,7 +108,7 @@
     </main>
     <div style="height: 8vh;"></div>
     <footer>
-            Brenda Caroline, Gisele Araújo, Kauany Oliveira.
+            Gisele Araújo, Matheus Santos e Pedro Henrique.
     </footer>
    
 </body>
