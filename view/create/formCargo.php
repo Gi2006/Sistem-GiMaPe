@@ -54,7 +54,10 @@
               <label for="exampleInputEmail1" class="form-label">Digite cargo:</label><br>
               <input type="text" class="txtNomeCargo" name="txtNomeCargo" aria-describedby="emailHelp"
               style="border: solid black 1px;  " required maxlength="70"><br><br>
+              <label for="datetime">Data e Hora:</label>
+              <input type="datetime-local" id="datetime" name="txtDataHora"><br><br>
           <button type="submit" class="btn btn-primary">Enviar</button> </div>
+          
         </div>
         </form>
       </center>
@@ -63,6 +66,7 @@
     <footer>
             Gisele Araújo, Matheus Santos e Pedro Henrique.
     </footer>
+    <script src="../js/script.js"></script>
 
 </body>
 </html>

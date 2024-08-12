@@ -67,6 +67,7 @@
           <input type="text" class="form-control" id="exampleInputEmail1" name="txtEndereco" 
           aria-describedby="emailHelp" style="border: solid black 1px; width: 70%; border-radius: 0%;" required maxlength="70"><br>
           
+
           <select name="txtCargo">
             <?php
             require_once '../../model/classFuncionario.php';
@@ -83,9 +84,6 @@
         </select>
         <br><br>
 
-
-
-    
           <select name="txtDepartamento">
             <?php $id = $func->consultarDepartamento();?>
             <option value="valor">Selecione um departamento:</option>
@@ -97,19 +95,21 @@
                 <?php echo $id[$i]['nomeDepartamento'];?>
             </option>
             <?php }  ?>
-        </select><br><br>
+          </select><br><br>
+
+          <label for="datetime">Data e Hora:</label>
+          <input type="datetime-local" id="datetime" name="txtDataHora"><br><br>
          
-          
           <button type="submit" class="btn btn-primary">Enviar</button>
         </div></center>
         
     </div></section>
       </form>
     </main>
-    <div style="height: 8vh;"></div>
     <footer>
             Gisele Araújo, Matheus Santos e Pedro Henrique.
     </footer>
-   
+    <script src="../js/script.js"></script>
+
 </body>
 </html>

@@ -15,8 +15,8 @@ create table funcionario
     cpf char(11) not null unique,
     nome varchar(40) not null,
     telefone char(15) null,
-    endereco varchar(70) not null
-
+    endereco varchar(70) not null,
+    dataHora datetime
 );
 -- --	-------- CAMPOS INDICES E CHAVES PRIMÁRIAS ------------------- 
 
@@ -50,6 +50,7 @@ set sql_safe_updates=1;
 create table departamento (
 nomeDepartamento varchar(70) not null,
 codDepartamento int auto_increment not null,
+dataHora datetime,
 constraint uqDepto unique (nomeDepartamento),
 constraint primary key(codDepartamento)
 );
@@ -65,11 +66,15 @@ constraint primary key(codDepartamento)
 create table cargo 
 (
 	nomeCargo varchar(70) not null unique,
-    codCargo int auto_increment not null primary key
+    codCargo int auto_increment not null primary key,
+    dataHora datetime null
     );
     
 -- alterar funcionario e adicionar a estrangeira com Cargo
 alter table funcionario add codCargo int not null;
 alter table funcionario add constraint fkCargoFunc
 foreign key (codCargo) references cargo (codCargo);
-    
+
+-- drop database empresa0702;
+
+select * from cargo;

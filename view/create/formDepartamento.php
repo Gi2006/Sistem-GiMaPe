@@ -49,7 +49,9 @@
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Digite departamento:</label>
           <input type="text" class="form-control" id="exampleInputEmail1" name="txtNomeDepartamento" 
-          aria-describedby="emailHelp" style="border: solid black 1px; width: 70%; border-radius: 0%;" required maxlength="70"><br>
+          aria-describedby="emailHelp" style="border: solid black 1px; width: 70%; border-radius: 0%;" required maxlength="70"><br><br>
+          <label for="datetime">Data e Hora:</label>
+              <input type="datetime-local" id="datetime" name="txtDataHora"><br><br>
           <button type="submit" class="btn btn-primary">Enviar</button>
         </div></center>
         
@@ -59,6 +61,7 @@
     <footer>
             Gisele Araújo, Matheus Santos e Pedro Henrique.
     </footer>
-   
+    <script src="../js/script.js"></script>
+
 </body>
 </html>

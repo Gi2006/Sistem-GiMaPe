@@ -47,6 +47,7 @@
         <h2>Cargo</h2>
         <table>
             <tr>
+                <th>Data e hora</th>
                 <th>Nome</th>
                 <th>Cod Cargo</th>
                 <th>Alteração</th>
@@ -59,8 +60,11 @@
 
             foreach ($cargos as $row) {
                 echo "<tr>";
+                echo "<td>".$row['dataHora']."</td>";
                 echo "<td>".$row['nomeCargo']."</td>";
                 echo "<td>".$row['codCargo']."</td>";
+                
+
                 echo '<td><button class="btn btn-primary" onclick="window.location.href=\'../update/alteracaoCargo.php?id='.$row['codCargo'].'\'">Alterar</button></td>';
                 echo '<td>
                         <form method="POST" action="../../controller/delete/excluiCargo.php" style="display:inline;">

@@ -51,10 +51,10 @@ $telefone = addslashes($_POST['txtTelefone']);
 $endereco = addslashes($_POST['txtEndereco']);
 $codDepartamento = addslashes($_POST['txtDepartamento']);
 $codCargo = addslashes($_POST['txtCargo']);
-
+$dataHora = addslashes($_POST['txtDataHora']);
 
 $func = new Funcionario();
-$func->validaFuncionario($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo);
+$func->validaFuncionario($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora);
 
 header('Location: ../../view/read/consultaFuncionario.php');
 ?>

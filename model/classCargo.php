@@ -9,25 +9,28 @@ Class Cargo
         $this->pdo = $conexao->conectar();
     }
 
-    public function insereCargo ($nomeCargo){
-        $insere = $this->pdo->prepare("insert into cargo (nomeCargo) values (:n)");
+    public function insereCargo ($nomeCargo, $dataHora){
+        $insere = $this->pdo->prepare("insert into cargo (nomeCargo, dataHora) values (:n, :dh)");
         $insere->bindValue(":n",$nomeCargo);
+        $insere->bindValue(":dh",$dataHora);
         $insere->execute();
     }
 
-    public function validaCargo($nomeCargo){
+
+    public function validaCargo($nomeCargo, $dataHora){
         $valida = $this->pdo->prepare("select codCargo from cargo where nomeCargo = :c");
         $valida->bindValue(":c", $nomeCargo);
         $valida -> execute();
 
         if ($valida->rowCount()>0){
-            echo"<script>alert('DCargo já cadastrado, verifique duplicidade')</script>";
+            echo"<script>alert('Cargo ou data hora já cadastrado, verifique duplicidade')</script>";
         }
         else {
-            $this->insereCargo($nomeCargo);
-            echo "<script>alert('Cadastrado o novo cargo com sucesso!')</script>";
+            $this->insereCargo($nomeCargo, $dataHora);
+            echo "<script>alert('Cadastrado o novo cargo e data hora com sucesso!')</script>";
         }
     }
+
 
     public function alterarCargo($codCargo, $nomeCargo){ 
         $comandoSql = "UPDATE cargo SET nomeCargo = :nomeCargo WHERE codCargo = :codCargo"; 

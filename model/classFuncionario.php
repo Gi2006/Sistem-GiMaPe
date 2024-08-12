@@ -9,9 +9,9 @@ Class Funcionario
         $this->pdo = $conexao->conectar();
     }
 
-    public function insereFuncionario ($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo){
-        $insere = $this->pdo->prepare("insert into funcionario ( cpf, nome, telefone, endereco, codDepartamento, codCargo) 
-        values (:c,:n,:t,:e,:co,:coc)");
+    public function insereFuncionario ($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora){
+        $insere = $this->pdo->prepare("insert into funcionario ( cpf, nome, telefone, endereco, codDepartamento, codCargo, dataHora) 
+        values (:c,:n,:t,:e,:co,:coc, :dh)");
 
         $insere->bindValue(":c",$cpf);
         $insere->bindValue(":n",$nome);        
@@ -19,20 +19,21 @@ Class Funcionario
         $insere->bindValue(":e",$endereco);
         $insere->bindValue(":co",$codDepartamento);
         $insere->bindValue(":coc",$codCargo);
+        $insere->bindValue(":dh",$dataHora);
         $insere->execute();
     }
 
-    public function validaFuncionario($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo) {
+    public function validaFuncionario($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora) {
         $valida = $this->pdo->prepare("select cpf from funcionario where cpf = :cpf");
         $valida->bindValue(":cpf", $cpf);
         $valida -> execute();
     
         if ($valida->rowCount()>0){
-            echo"<script>alert('Funcionario já cadastrado, verifique duplicidade')</script>";
+            echo"<script>alert('Funcionario ou data hora já cadastrado, verifique duplicidade')</script>";
         }
         else {
-            $this->insereFuncionario($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo);
-            echo "<script>alert('Cadastrado o novo Funcionario com sucesso!')</script>";
+            $this->insereFuncionario($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora);
+            echo "<script>alert('Cadastrado o novo Funcionario e data hora com sucesso!')</script>";
         }
     }
 

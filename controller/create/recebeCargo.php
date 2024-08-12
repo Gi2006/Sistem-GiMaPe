@@ -57,11 +57,11 @@
 <?php
 require_once '../../model/classCargo.php';
 
-
 $nomeCargo = addslashes($_POST['txtNomeCargo']);
+$dataHora = addslashes($_POST['txtDataHora']);
 
 $cargo = new Cargo();
-$cargo->validaCargo($nomeCargo);
+$cargo->validaCargo($nomeCargo, $dataHora);
 header('Location: ../../view/read/consultaCargo.php');
 ?>
 

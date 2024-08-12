@@ -45,9 +45,10 @@ require_once '../../model/classDepartamento.php';
 
 
 $nomeDepartamento = addslashes($_POST['txtNomeDepartamento']);
+$dataHora = addslashes($_POST['txtDataHora']);
 
 $departamento = new Departamento();
-$departamento->validaDepartamento($nomeDepartamento);
+$departamento->validaDepartamento($nomeDepartamento, $dataHora);
 header('Location: ../../view/read/consultaDepartamento.php');
 ?>
 <main>

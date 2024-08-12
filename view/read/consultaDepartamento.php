@@ -47,6 +47,7 @@
         <h2>Departamento</h2>
         <table>
             <tr>
+                <th>Data e hora</th>
                 <th>Nome</th>
                 <th>Cod Departamento</th>
                 <th>Alteração</th>
@@ -59,6 +60,7 @@
 
             foreach ($departamentos as $row) {
                 echo "<tr>";
+                echo "<td>".$row['dataHora']."</td>";
                 echo "<td>".$row['nomeDepartamento']."</td>";
                 echo "<td>".$row['codDepartamento']."</td>";
                 echo '<td><button class="btn btn-primary" onclick="window.location.href=\'../update/alteracaoDepartamento.php?id='.$row['codDepartamento'].'\'">Alterar</button></td>';

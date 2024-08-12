@@ -9,23 +9,24 @@ Class Departamento
         $this->pdo = $conexao->conectar();
     }
 
-    public function insereDepartamento ($nomeDepartamento){
-        $insere = $this->pdo->prepare("insert into departamento (nomeDepartamento) values (:n)");
+    public function insereDepartamento ($nomeDepartamento, $dataHora){
+        $insere = $this->pdo->prepare("insert into departamento (nomeDepartamento, dataHora) values (:n, :dh)");
         $insere->bindValue(":n",$nomeDepartamento);
+        $insere->bindValue(":dh",$dataHora);
         $insere->execute();
     }
     
-    public function validaDepartamento($nomeDepartamento){
+    public function validaDepartamento($nomeDepartamento, $dataHora){
         $valida = $this->pdo->prepare("select codDepartamento from departamento where nomeDepartamento = :depto");
         $valida->bindValue(":depto", $nomeDepartamento);
         $valida -> execute();
 
         if ($valida->rowCount()>0){
-            echo"<script>alert('Departamento já cadastrado, verifique duplicidade')</script>";
+            echo"<script>alert('Departamento ou data hora já cadastrado, verifique duplicidade')</script>";
         }
         else {
-            $this->insereDepartamento($nomeDepartamento);
-            echo "<script>alert('Cadastrado o novo departamento com sucesso!')</script>";
+            $this->insereDepartamento($nomeDepartamento, $dataHora);
+            echo "<script>alert('Cadastrado o novo departamento e data hora com sucesso!')</script>";
         }
     }
 

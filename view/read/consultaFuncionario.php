@@ -47,6 +47,7 @@
         <h2>Funcionário</h2>
         <table>
             <tr>
+                <th>Data e hora</th>
                 <th>Funcional</th>
                 <th>Cpf</th>
                 <th>Nome</th>
@@ -64,6 +65,7 @@
 
             foreach ($funcionarios as $row) {
                 echo "<tr>";
+                echo "<td>".$row['dataHora']."</td>";
                 echo "<td>".$row['funcional']."</td>";
                 echo "<td>".$row['cpf']."</td>";
                 echo "<td>".$row['nome']."</td>";
