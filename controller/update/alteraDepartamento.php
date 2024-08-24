@@ -11,8 +11,8 @@ class alteraDepartamento {
     public function getDepartamento($codDepartamento) {
         return $this->model->getDepartamento($codDepartamento);
     }
-    public function alterarDepartamento($codDepartamento, $nomeDepartamento, $dataHora) {
-        return $this->model->alterarDepartamento($codDepartamento, $nomeDepartamento, $dataHora);
+    public function alterarDepartamento($codDepartamento, $nomeDepartamento) {
+        return $this->model->alterarDepartamento($codDepartamento, $nomeDepartamento);
     }
 
 }
@@ -27,10 +27,8 @@ if (isset($_GET['id'])) {
 if (isset($_POST['update_departamento'])) {
     $codDepartamento = $_POST['codDepartamento'];
     $nomeDepartamento = $_POST['nomeDepartamento'];
-    $dataHora = $_POST['dataHora'];
-
-    $controller->alterarDepartamento($codDepartamento, $nomeDepartamento, $dataHora);
-    if ($controller->alterarDepartamento($codDepartamento, $nomeDepartamento, $dataHora)) {
+    $controller->alterarDepartamento($codDepartamento, $nomeDepartamento);
+    if ($controller->alterarDepartamento($codDepartamento, $nomeDepartamento)) {
         echo '<div class="alert alert-success" role="alert">Departamento atualizado com sucesso!</div>';
     } else {
         echo '<div class="alert alert-danger" role="alert">Erro ao atualizar departamento.</div>';

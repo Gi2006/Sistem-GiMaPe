@@ -57,15 +57,8 @@
                     <input type="hidden" class="form-control"  name="codCargo" value="'.$cargo['codCargo'].'" required>
                     <div class="mb-3">
                         <label for="nomeCargo" class="form-label">Nome do Cargo</label>
-                        <input type="text" class="form-control"  name="nomeCargo" value="'.$cargo['nomeCargo'].'" required><br><br>
-
-                        <label for="datetime">Data e Hora:</label><br>
-                        <input type="datetime-local" id="datetime" name="dataHora" value="'.$cargo['dataHora'].'" required><br><br>
-
-                        <br><br>
-                        <label for="exampleInputEmail1" class="form-label">Salário:</label>
-                        <input type="decimal" name="salario" value="'.$cargo['salario'].'" required><br><br>
-                        </div>
+                        <input type="text" class="form-control"  name="nomeCargo" value="'.$cargo['nomeCargo'].'" required>
+                    </div>
                     <button type="submit" class="btn btn-primary" name="update_cargo">Salvar Alterações</button>
                     </form>';
                 } else {

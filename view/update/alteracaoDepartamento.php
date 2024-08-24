@@ -55,9 +55,7 @@
                 <input type="hidden" class="form-control"  name="codDepartamento" value="'.$departamento['codDepartamento'].'" required>
                 <div class="mb-3">
                      <label for="nomeDepartamento" class="form-label">Nome do Departamento</label>
-                     <input type="text" class="form-control"  name="nomeDepartamento" value="'.$departamento['nomeDepartamento'].'" required><br><br>
-                     <label for="datetime">Data e Hora:</label><br>
-                     <input type="datetime-local" id="datetime" name="dataHora" value="'.$departamento['dataHora'].'" required><br><br>
+                     <input type="text" class="form-control"  name="nomeDepartamento" value="'.$departamento['nomeDepartamento'].'" required>
                 </div>
                 <button type="submit" class="btn btn-primary" name="update_departamento">Salvar Alterações</button>
                 </form>';

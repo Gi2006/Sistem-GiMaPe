@@ -9,18 +9,15 @@ Class Cargo
         $this->pdo = $conexao->conectar();
     }
 
-    public function insereCargo ($nomeCargo, $dataHora, $salario){
-        $insere = $this->pdo->prepare("insert into cargo (nomeCargo, dataHora, salario) values (:n, :dh, :s)");
+    public function insereCargo ($nomeCargo, $dataHora){
+        $insere = $this->pdo->prepare("insert into cargo (nomeCargo, dataHora) values (:n, :dh)");
         $insere->bindValue(":n",$nomeCargo);
         $insere->bindValue(":dh",$dataHora);
-        $insere->bindValue(":s",$salario);
-
-        
         $insere->execute();
     }
 
 
-    public function validaCargo($nomeCargo, $dataHora, $salario){
+    public function validaCargo($nomeCargo, $dataHora){
         $valida = $this->pdo->prepare("select codCargo from cargo where nomeCargo = :c");
         $valida->bindValue(":c", $nomeCargo);
         $valida -> execute();
@@ -29,20 +26,17 @@ Class Cargo
             echo"<script>alert('Cargo ou data hora já cadastrado, verifique duplicidade')</script>";
         }
         else {
-            $this->insereCargo($nomeCargo, $dataHora, $salario);
+            $this->insereCargo($nomeCargo, $dataHora);
             echo "<script>alert('Cadastrado o novo cargo e data hora com sucesso!')</script>";
         }
     }
 
 
-    public function alterarCargo($codCargo, $nomeCargo, $dataHora, $salario){ 
-        $comandoSql = "UPDATE cargo SET nomeCargo = :nomeCargo, dataHora = :dataHora, salario = :salario WHERE codCargo = :codCargo"; 
+    public function alterarCargo($codCargo, $nomeCargo){ 
+        $comandoSql = "UPDATE cargo SET nomeCargo = :nomeCargo WHERE codCargo = :codCargo"; 
         $exec = $this->pdo->prepare($comandoSql); 
-        $exec->bindValue(":codCargo", $codCargo);
         $exec->bindValue(":nomeCargo", $nomeCargo);
-        $exec->bindValue(":dataHora", $dataHora);
-        $exec->bindValue(":salario", $salario);
-
+        $exec->bindValue(":codCargo", $codCargo);
         return $exec->execute(); 
         } 
         

@@ -67,10 +67,7 @@
           <input type="text" class="form-control" id="exampleInputEmail1" name="txtEndereco" 
           aria-describedby="emailHelp" style="border: solid black 1px; width: 70%; border-radius: 0%;" required maxlength="70"><br>
           
-          <label>SELECIONE O ARQUIVO</label>
-          <input name="upload" type="file"><br><br>
 
-          
           <select name="txtCargo">
             <?php
             require_once '../../model/classFuncionario.php';

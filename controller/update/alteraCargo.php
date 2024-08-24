@@ -11,8 +11,8 @@ class alteraCargo {
     public function getCargo($codCargo) {
         return $this->model->getCargo($codCargo);
     }
-    public function alterarCargo($codCargo, $nomeCargo, $dataHora, $salario) {
-        return $this->model->alterarCargo($codCargo, $nomeCargo, $dataHora, $salario);
+    public function alterarCargo($codCargo, $nomeCargo) {
+        return $this->model->alterarCargo($codCargo, $nomeCargo);
     }
 
 }
@@ -27,11 +27,8 @@ if (isset($_GET['id'])) {
 if (isset($_POST['update_cargo'])) {
     $codCargo = $_POST['codCargo'];
     $nomeCargo = $_POST['nomeCargo'];
-    $dataHora = $_POST['dataHora'];
-    $salario = $_POST['salario'];
-
-    
-    if ($controller->alterarCargo($codCargo, $nomeCargo, $dataHora, $salario)) {
+    $controller->alterarCargo($codCargo, $nomeCargo);
+    if ($controller->alterarCargo($codCargo, $nomeCargo)) {
         echo '<div class="alert alert-success" role="alert">Cargo atualizado com sucesso!</div>';
     } else {
         echo '<div class="alert alert-danger" role="alert">Erro ao atualizar Cargo.</div>';

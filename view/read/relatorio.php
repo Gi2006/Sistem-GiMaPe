@@ -13,8 +13,8 @@
         .container { display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 100px; }
     </style>
 </head>
-<body class="fundo">
-<header>
+<body>
+<header class="fundo">
     <nav class="nav-header">
           <ul>
               <li><a href="../../index.html">Home</a></li>
@@ -44,43 +44,32 @@
 <main>
     <center>
     <div>
-        <h2>Cargo</h2>
+        <h2>Funcionário</h2>
         <table>
             <tr>
                 <th>Data e hora</th>
+                <th>Funcional</th>
+                <th>Cpf</th>
                 <th>Nome</th>
-                <th>Cod Cargo</th>
+                <th>Telefone</th>
+                <th>Endereço</th>
+                <th>Departamento</th>
+                <th>Cargo</th>
                 <th>Alteração</th>
                 <th>Exclusão</th>
+                <th>Consultar</th>
+
             </tr>
-            <?php
-            require_once '../../controller/read/consultaCargo.php';
-            $controller = new consultaCargo();
-            $cargos = $controller->consultarCargo();
+<?php
 
-            foreach ($cargos as $row) {
-                echo "<tr>";
-                echo "<td>".$row['dataHora']."</td>";
-                echo "<td>".$row['nomeCargo']."</td>";
-                echo "<td>".$row['codCargo']."</td>";
-                
+?>
 
-                echo '<td><button class="btn btn-primary" onclick="window.location.href=\'../update/alteracaoCargo.php?id='.$row['codCargo'].'\'">Alterar</button></td>';
-                echo '<td>
-                        <form method="POST" action="../../controller/delete/excluiCargo.php" style="display:inline;">
-                            <input type="hidden" name="codCargo" value="'.$row['codCargo'].'">
-                            <button type="submit" name="delete_cargo" class="btn btn-danger">Excluir</button>
-                        </form>
-                      </td>';
-                echo "</tr>";
-            }
-            ?>
-        </table>
+</table>
     </div>
     </center>
 </main>
 <footer>
-    Gisele Araújo, Matheus Santos e Pedro Henrique.
+            Gisele Araújo, Matheus Santos e Pedro Henrique.
 </footer>
 </body>
 </html>
