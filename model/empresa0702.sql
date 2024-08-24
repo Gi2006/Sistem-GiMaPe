@@ -16,7 +16,11 @@ create table funcionario
     nome varchar(40) not null,
     telefone char(15) null,
     endereco varchar(70) not null,
-    dataHora datetime
+    dataHora datetime,
+    imagem varchar(100) not null,
+    nomeCodigo varchar(255) not null unique,
+    nomeOriginal varchar(255) not null,
+    dataUpload timestamp default current_timestamp
 );
 -- --	-------- CAMPOS INDICES E CHAVES PRIMÁRIAS ------------------- 
 
@@ -67,7 +71,8 @@ create table cargo
 (
 	nomeCargo varchar(70) not null unique,
     codCargo int auto_increment not null primary key,
-    dataHora datetime null
+    dataHora datetime not null,
+    salario DECIMAL (8,2) not null
     );
     
 -- alterar funcionario e adicionar a estrangeira com Cargo
@@ -77,4 +82,3 @@ foreign key (codCargo) references cargo (codCargo);
 
 -- drop database empresa0702;
 
-select * from cargo;

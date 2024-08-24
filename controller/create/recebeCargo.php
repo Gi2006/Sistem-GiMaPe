@@ -59,9 +59,10 @@ require_once '../../model/classCargo.php';
 
 $nomeCargo = addslashes($_POST['txtNomeCargo']);
 $dataHora = addslashes($_POST['txtDataHora']);
+$salario = addslashes($_POST['txtSalario']);
 
 $cargo = new Cargo();
-$cargo->validaCargo($nomeCargo, $dataHora);
+$cargo->validaCargo($nomeCargo, $dataHora, $salario);
 header('Location: ../../view/read/consultaCargo.php');
 ?>
 

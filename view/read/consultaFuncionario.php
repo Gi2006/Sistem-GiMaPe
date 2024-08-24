@@ -76,15 +76,14 @@
                 echo "<td>".$row['nomeDepartamento']."</td>";
                 echo "<td>".$row['nomeCargo']."</td>";
                 echo '<td><button class="btn btn-primary" onclick="window.location.href=\'../update/alteracaoFuncionario.php?funcional='.$row['funcional'].'\'">Alterar</button></td>';
-
                 echo '<td>
                         <form method="POST" action="../../controller/read/consultaFuncionario.php" style="display:inline;">
                             <input type="hidden" name="funcional" value="'.$row['funcional'].'">
                             <button type="submit" name="delete_funcionario" class="btn btn-danger">Excluir</button>
                         </form>
                       </td>';
+                echo '<td><button class="btn btn-success" onclick="window.location.href=\'../relatorio.php?funcional='.$row['funcional'].'\'">Consultar</button></td>';
 
-                echo '<td><button class="btn btn-success" onclick="window.location.href=\'relatorio.php?funcional='.$row['funcional'].'\'">Consultar</button></td>';
                 echo "</tr>";
             }
             ?>

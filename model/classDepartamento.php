@@ -66,11 +66,12 @@ Class Departamento
         }
     }
 
-    public function alterarDepartamento($codDepartamento,$nomeDepartamento) {
+    public function alterarDepartamento($codDepartamento, $nomeDepartamento, $dataHora) {
         $retorna= array();
-        $comandosql = $this->pdo->prepare("UPDATE departamento SET nomeDepartamento = :nome WHERE codDepartamento = :id");
+        $comandosql = $this->pdo->prepare("UPDATE departamento SET nomeDepartamento = :nome, dataHora = :dataHora WHERE codDepartamento = :id");
         $comandosql->bindParam(':nome', $nomeDepartamento);
         $comandosql->bindParam(':id', $codDepartamento);
+        $comandosql->bindParam(":dataHora", $dataHora);
         
         if ($comandosql->execute()) {
             return $retorna;

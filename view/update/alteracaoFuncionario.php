@@ -74,6 +74,10 @@
                         <input type="text" class="form-control" id="endereco" name="endereco" value="'.$funcionario['endereco'].'" required>
                     </div>
                     <div class="mb-3">
+                    <br><br>
+                     <label for="datetime">Data e Hora:</label><br>
+                     <input type="datetime-local" id="datetime" name="dataHora" value="'.$funcionario['dataHora'].'" required><br><br>
+
                     <label for="codCargo" class="form-label">Cargo</label>
                     <select class="form-select" id="codCargo" name="codCargo" required>'; 
                         foreach ($cargos as $cargo) {

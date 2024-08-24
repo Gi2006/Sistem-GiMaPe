@@ -44,7 +44,7 @@
         <form method="POST" action="../../controller/create/recebeDepartamento.php">
             <center>
                 <div style="height: 18vh;"></div>
-            <div class="centro" style="height: 250px; border: solid black 5px; width: 40%; padding: 35px 50px; border-radius: 20px;"> 
+            <div class="centro" style="height: 350px; border: solid black 5px; width: 40%; padding: 35px 50px; border-radius: 20px;"> 
                 <h1>DEPARTAMENTO</h1>   
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Digite departamento:</label>

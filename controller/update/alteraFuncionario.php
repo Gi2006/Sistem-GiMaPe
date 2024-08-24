@@ -11,8 +11,8 @@ class alteraFuncionario {
     public function getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo) {
         return $this->model->getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo);
     }
-    public function alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo) {
-        return $this->model->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo);
+    public function alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora) {
+        return $this->model->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora);
     }
 
     public function consultarCargo() {
@@ -35,6 +35,7 @@ $telefone = isset($_GET['telefone']) ? $_GET['telefone'] : null;
 $endereco = isset($_GET['endereco']) ? $_GET['endereco'] : null;
 $codDepartamento = isset($_GET['codDepartamento']) ? $_GET['codDepartamento'] : null;
 $codCargo = isset($_GET['codCargo']) ? $_GET['codCargo'] : null;
+$dataHora = isset($_GET['dataHora']) ? $_GET['dataHora'] : null;
 
 if ($funcional && $cpf && $nome && $telefone && $endereco && $codDepartamento && $codCargo) {
     $funcionario = $controller->getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo);
@@ -49,8 +50,9 @@ if (isset($_POST['update_funcionario'])) {
     $endereco = $_POST['endereco'];
     $codDepartamento = $_POST['codDepartamento'];
     $codCargo = $_POST['codCargo'];
-    $controller->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo);
-    if ($controller->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo)) {
+    $dataHora = $_POST['dataHora'];
+    $controller->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora);
+    if ($controller->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora)) {
         echo '<div class="alert alert-success" role="alert">Funcionário atualizado com sucesso!</div>';
     } else {
         echo '<div class="alert alert-danger" role="alert">Erro ao atualizar funcionário.</div>';

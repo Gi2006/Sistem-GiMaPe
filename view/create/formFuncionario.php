@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +45,7 @@
           <section id="funcionario">
             <center>
                 <div style="height: 8vh;"></div>
-            <div class="centro" style="height: 600px; border: solid black 5px; width: 40%; padding: 35px 50px; border-radius: 20px;"> 
+            <div class="centro" style="height: 700px; border: solid black 5px; width: 40%; padding: 35px 50px; border-radius: 20px;"> 
                 <h1>Funcionário</h1>   
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Digite nome:</label>
@@ -67,7 +64,9 @@
           <input type="text" class="form-control" id="exampleInputEmail1" name="txtEndereco" 
           aria-describedby="emailHelp" style="border: solid black 1px; width: 70%; border-radius: 0%;" required maxlength="70"><br>
           
-
+          <label>SELECIONE O ARQUIVO</label>
+        <input name="upload" type="file"><br><br>
+        
           <select name="txtCargo">
             <?php
             require_once '../../model/classFuncionario.php';
@@ -105,7 +104,7 @@
         
     </div></section>
       </form>
-    </main>
+    </main><BR><BR><BR><BR>
     <footer>
             Gisele Araújo, Matheus Santos e Pedro Henrique.
     </footer>
