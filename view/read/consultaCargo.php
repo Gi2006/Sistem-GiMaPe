@@ -47,6 +47,7 @@
         <h2>Cargo</h2>
         <table>
             <tr>
+                <th>Salário</th>
                 <th>Data e hora</th>
                 <th>Nome</th>
                 <th>Cod Cargo</th>
@@ -60,6 +61,7 @@
 
             foreach ($cargos as $row) {
                 echo "<tr>";
+                echo "<td>".$row['salario']."</td>";
                 echo "<td>".$row['dataHora']."</td>";
                 echo "<td>".$row['nomeCargo']."</td>";
                 echo "<td>".$row['codCargo']."</td>";
@@ -70,6 +72,7 @@
                         <form method="POST" action="../../controller/delete/excluiCargo.php" style="display:inline;">
                             <input type="hidden" name="codCargo" value="'.$row['codCargo'].'">
                             <button type="submit" name="delete_cargo" class="btn btn-danger">Excluir</button>
+                            <a href="ver.php">CONSULTAR IMAGENS ENVIADAS </a><br>
                         </form>
                       </td>';
                 echo "</tr>";

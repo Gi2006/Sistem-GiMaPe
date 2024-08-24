@@ -56,6 +56,8 @@
               style="border: solid black 1px;  " required maxlength="70"><br><br>
               <label for="datetime">Data e Hora:</label>
               <input type="datetime-local" id="datetime" name="txtDataHora"><br><br>
+              <label for="exampleInputEmail1" class="form-label">Salário:</label>
+              <input type="decimal" name="txtSalario"><br><br>
           <button type="submit" class="btn btn-primary">Enviar</button> </div>
           
         </div>

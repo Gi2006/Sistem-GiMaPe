@@ -61,10 +61,10 @@ Class Funcionario
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    public function alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo){
+    public function alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora){
         $retorna = array();
         $comandosql = $this->pdo->prepare("UPDATE funcionario SET cpf = :cpf, nome = :nome, telefone = :telefone,
-         endereco = :endereco, codDepartamento = :codDepartamento, codCargo = :codCargo WHERE funcional = :funcional");
+         endereco = :endereco, codDepartamento = :codDepartamento, codCargo = :codCargo, dataHora = :dataHora WHERE funcional = :funcional");
         $comandosql->bindParam(':funcional', $funcional);
         $comandosql->bindParam(':cpf', $cpf);
         $comandosql->bindParam(':nome', $nome);
@@ -72,6 +72,7 @@ Class Funcionario
         $comandosql->bindParam(':endereco', $endereco);
         $comandosql->bindParam(':codDepartamento', $codDepartamento);
         $comandosql->bindParam(':codCargo', $codCargo);
+        $comandosql->bindParam(':dataHora', $dataHora);
         
         if ($comandosql->execute()) {
             return $retorna;
