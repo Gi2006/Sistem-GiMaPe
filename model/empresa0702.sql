@@ -17,10 +17,7 @@ create table funcionario
     telefone char(15) null,
     endereco varchar(70) not null,
     dataHora datetime,
-    imagem varchar(100) not null,
-    nomeCodigo varchar(255) not null unique,
-    nomeOriginal varchar(255) not null,
-    dataUpload timestamp default current_timestamp
+    caminho varchar(255) not null
 );
 -- --	-------- CAMPOS INDICES E CHAVES PRIMÁRIAS ------------------- 
 
@@ -81,4 +78,8 @@ alter table funcionario add constraint fkCargoFunc
 foreign key (codCargo) references cargo (codCargo);
 
 -- drop database empresa0702;
+
+select * from funcionario;
+
+
 

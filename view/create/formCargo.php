@@ -48,12 +48,12 @@
     <main>
       <center>
         <div style="height: 18vh;"></div>
-                <div class="centro" style="height: 300px; border: solid black 5px; width: 40%; padding: 30px 30px; border-radius: 20px;"> 
+                <div class="centro" style="height: 330px; border: solid black 5px; width: 40%; padding: 30px 30px; border-radius: 20px;"> 
                 <h1>CARGO</h1>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Digite cargo:</label><br>
               <input type="text" class="txtNomeCargo" name="txtNomeCargo" aria-describedby="emailHelp"
-              style="border: solid black 1px;  " required maxlength="70"><br><br>
+              style="border: solid black 1px;  " required maxlength="70" ><br><br>
               <label for="datetime">Data e Hora:</label>
               <input type="datetime-local" id="datetime" name="txtDataHora"><br><br>
               <label for="exampleInputEmail1" class="form-label">Salário:</label>
