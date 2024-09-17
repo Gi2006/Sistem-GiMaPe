@@ -53,6 +53,7 @@ $endereco = addslashes($_POST['txtEndereco']);
 $codDepartamento = addslashes($_POST['txtDepartamento']);
 $codCargo = addslashes($_POST['txtCargo']);
 $dataHora = addslashes($_POST['txtDataHora']);
+$NovoUpload = addslashes($_POST['upload']);
 
 if(isset($_FILES['upload']))
 {
@@ -89,7 +90,9 @@ if(isset($_FILES['upload']))
        
     //mover para pasta do projeto
     $arquivoUpload = move_uploaded_file($arquivo["tmp_name"],$caminho);
-    $func->validaFuncionario($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora,$caminho);
+    $func->validaFuncionario($cpf, $nome, $telefone,
+    $endereco, $codDepartamento, $codCargo,
+     $dataHora,$caminho,NovoUpload: $NovoUpload);
 
        
 }

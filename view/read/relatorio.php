@@ -71,6 +71,9 @@
   <?php  echo $row['cpf'];?><br><br>
 
   <b>Nome:</b>
+  <?php  echo $row['nome'];?><br><br>
+
+  <b>Telefone:</b>
   <?php  echo $row['telefone'];?><br><br>
   
   <b>Endereço:</b>
@@ -81,13 +84,16 @@
   
   <b>Cargo:</b>
   <?php  echo $row['nomeCargo'];?><br><br>
+  <form method="POST" action="../../controller/create/recebeFuncionario.php" enctype="multipart/form-data">
 
-  
+  <label>Escolha a foto:</label>
   <input name="upload" type="file" accept="image/png, image/jpeg"  multiple><br><br>
-  <?php echo '<button class="btn btn-primary" onclick="window.location.href=\'?funcional='.$row['funcional'].'\'">Alterar</button>'; ?>
+  <button type="submit" class="btn btn-primary">Alterar foto</button>
+  </form>
     </div>
 </center>
 </main>
+<br><br>
 <footer>
     Gisele Araújo, Matheus Santos e Pedro Henrique.
 </footer>

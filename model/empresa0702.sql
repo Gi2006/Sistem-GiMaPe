@@ -19,13 +19,20 @@ create table funcionario
     dataHora datetime,
     caminho varchar(255) not null
 );
-/*
+
+
+
 create table login
 (
 	senha varchar(8) not null,
 	estado boolean
 );
-*/
+
+ alter table login add constraint fkfuncLogin
+    foreign key (funcional) references funcionario (funcional);
+    
+
+
 -- --	-------- CAMPOS INDICES E CHAVES PRIMÁRIAS ------------------- 
 
 /*A tabela acima possui um erro grave de REGRA DE IDENTIDADE
@@ -87,6 +94,9 @@ foreign key (codCargo) references cargo (codCargo);
 -- drop database empresa0702;
 
 select * from funcionario;
+
+
+
 
 
 
