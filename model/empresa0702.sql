@@ -17,11 +17,15 @@ create table funcionario
     telefone char(15) null,
     endereco varchar(70) not null,
     dataHora datetime,
-    imagem varchar(100) not null,
-    nomeCodigo varchar(255) not null unique,
-    nomeOriginal varchar(255) not null,
-    dataUpload timestamp default current_timestamp
+    caminho varchar(255) not null
 );
+/*
+create table login
+(
+	senha varchar(8) not null,
+	estado boolean
+);
+*/
 -- --	-------- CAMPOS INDICES E CHAVES PRIMÁRIAS ------------------- 
 
 /*A tabela acima possui um erro grave de REGRA DE IDENTIDADE
@@ -65,7 +69,7 @@ constraint primary key(codDepartamento)
     
     alter table funcionario add constraint fkfuncDepto
     foreign key (codDepartamento) references departamento (codDepartamento);
-
+    
 -- CRIAÇÃO DA TABELA CARGO
 create table cargo 
 (
@@ -81,4 +85,9 @@ alter table funcionario add constraint fkCargoFunc
 foreign key (codCargo) references cargo (codCargo);
 
 -- drop database empresa0702;
+
+select * from funcionario;
+
+
+
 

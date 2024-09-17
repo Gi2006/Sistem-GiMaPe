@@ -15,7 +15,7 @@
 </head>
 <body class="fundo">
 <header>
-    <nav class="nav-header">
+<nav class="nav-header">
           <ul>
               <li><a href="../../index.html">Home</a></li>
               <li>
@@ -44,43 +44,49 @@
 <main>
     <center>
     <div>
-        <h2>Cargo</h2>
-        <table>
-            <tr>
-                <th>Salário</th>
-                <th>Data e hora</th>
-                <th>Nome</th>
-                <th>Cod Cargo</th>
-                <th>Alteração</th>
-                <th>Exclusão</th>
-            </tr>
-            <?php
-            require_once '../../controller/read/consultaCargo.php';
-            $controller = new consultaCargo();
-            $cargos = $controller->consultarCargo();
-
-            foreach ($cargos as $row) {
-                echo "<tr>";
-                echo "<td>".$row['salario']."</td>";
-                echo "<td>".$row['dataHora']."</td>";
-                echo "<td>".$row['nomeCargo']."</td>";
-                echo "<td>".$row['codCargo']."</td>";
-                
-
-                echo '<td><button class="btn btn-primary" onclick="window.location.href=\'../update/alteracaoCargo.php?id='.$row['codCargo'].'\'">Alterar</button></td>';
-                echo '<td>
-                        <form method="POST" action="../../controller/delete/excluiCargo.php" style="display:inline;">
-                            <input type="hidden" name="codCargo" value="'.$row['codCargo'].'">
-                            <button type="submit" name="delete_cargo" class="btn btn-danger">Excluir</button>
-                            
-                        </form>
-                      </td>';
-                echo "</tr>";
+        <h2>Relatório</h2>
+        <?php
+    require_once '../../controller/read/consultaFuncionario.php';
+    $controller = new consultaFuncionario();
+    $funcionarios = $controller->consultarFuncionarios();
+    foreach ($funcionarios as $row) {
+            
             }
             ?>
-        </table>
+        
     </div>
-    </center>
+    
+    <div class="centro" style="height: 40%; border: solid black 5px; width: 40%; padding: 35px 50px; border-radius: 20px;"> 
+
+  <b>Foto de perfil:</b>
+  <?php   echo "<img src='".$row['caminho']."' width='100px' height='100px' alt='Imagem'/>";?><br><br>
+  
+  <b>Data e hora:</b>
+  <?php echo $row['dataHora'];?><br><br>
+  
+  <b>Funcional:</b>
+  <?php  echo $row['funcional'];?><br><br>
+  
+  <b>CPF:</b>
+  <?php  echo $row['cpf'];?><br><br>
+
+  <b>Nome:</b>
+  <?php  echo $row['telefone'];?><br><br>
+  
+  <b>Endereço:</b>
+  <?php  echo $row['endereco'];?><br><br>
+
+  <b>Departamento:</b>
+  <?php  echo $row['nomeDepartamento'];?><br><br>
+  
+  <b>Cargo:</b>
+  <?php  echo $row['nomeCargo'];?><br><br>
+
+  
+  <input name="upload" type="file" accept="image/png, image/jpeg"  multiple><br><br>
+  <?php echo '<button class="btn btn-primary" onclick="window.location.href=\'?funcional='.$row['funcional'].'\'">Alterar</button>'; ?>
+    </div>
+</center>
 </main>
 <footer>
     Gisele Araújo, Matheus Santos e Pedro Henrique.

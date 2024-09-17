@@ -11,8 +11,8 @@ class alteraFuncionario {
     public function getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo) {
         return $this->model->getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo);
     }
-    public function alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora) {
-        return $this->model->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora);
+    public function alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora, $caminho) {
+        return $this->model->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora, $caminho);
     }
 
     public function consultarCargo() {
@@ -36,9 +36,10 @@ $endereco = isset($_GET['endereco']) ? $_GET['endereco'] : null;
 $codDepartamento = isset($_GET['codDepartamento']) ? $_GET['codDepartamento'] : null;
 $codCargo = isset($_GET['codCargo']) ? $_GET['codCargo'] : null;
 $dataHora = isset($_GET['dataHora']) ? $_GET['dataHora'] : null;
+$caminho = isset($_GET['caminho']) ? $_GET['caminho'] : null;
 
-if ($funcional && $cpf && $nome && $telefone && $endereco && $codDepartamento && $codCargo) {
-    $funcionario = $controller->getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo);
+if ($funcional && $cpf && $nome && $telefone && $endereco && $codDepartamento && $codCargo && $caminho) {
+    $funcionario = $controller->getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $caminho);
 }
 
 
@@ -51,8 +52,10 @@ if (isset($_POST['update_funcionario'])) {
     $codDepartamento = $_POST['codDepartamento'];
     $codCargo = $_POST['codCargo'];
     $dataHora = $_POST['dataHora'];
-    $controller->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora);
-    if ($controller->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora)) {
+    $caminho = $_POST['caminho'];
+
+    $controller->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora, $caminho);
+    if ($controller->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora, $caminho)) {
         echo '<div class="alert alert-success" role="alert">Funcionário atualizado com sucesso!</div>';
     } else {
         echo '<div class="alert alert-danger" role="alert">Erro ao atualizar funcionário.</div>';

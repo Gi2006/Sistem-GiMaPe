@@ -9,9 +9,9 @@ Class Funcionario
         $this->pdo = $conexao->conectar();
     }
 
-    public function insereFuncionario ($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora){
-        $insere = $this->pdo->prepare("insert into funcionario ( cpf, nome, telefone, endereco, codDepartamento, codCargo, dataHora) 
-        values (:c,:n,:t,:e,:co,:coc, :dh)");
+    public function insereFuncionario ($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora, $caminho){
+        $insere = $this->pdo->prepare("insert into funcionario (cpf, nome, telefone, endereco, codDepartamento, codCargo, dataHora, caminho) 
+        values (:c,:n,:t,:e,:co,:coc, :dh,:ca)");
 
         $insere->bindValue(":c",$cpf);
         $insere->bindValue(":n",$nome);        
@@ -20,10 +20,12 @@ Class Funcionario
         $insere->bindValue(":co",$codDepartamento);
         $insere->bindValue(":coc",$codCargo);
         $insere->bindValue(":dh",$dataHora);
+        $insere->bindValue(":ca", $caminho);
         $insere->execute();
     }
 
-    public function validaFuncionario($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora) {
+
+    public function validaFuncionario($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora, $caminho) {
         $valida = $this->pdo->prepare("select cpf from funcionario where cpf = :cpf");
         $valida->bindValue(":cpf", $cpf);
         $valida -> execute();
@@ -32,7 +34,7 @@ Class Funcionario
             echo"<script>alert('Funcionario ou data hora já cadastrado, verifique duplicidade')</script>";
         }
         else {
-            $this->insereFuncionario($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora);
+            $this->insereFuncionario($cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora, $caminho);
             echo "<script>alert('Cadastrado o novo Funcionario e data hora com sucesso!')</script>";
         }
     }

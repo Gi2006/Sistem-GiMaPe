@@ -56,14 +56,17 @@
             if ($funcionario) {
                 echo '
                 <form method="POST" action="alteracaoFuncionario.php">
-                    <input type="hidden" class="form-control" name="funcional" value="'.$funcionario['funcional'].'">
+
                     <div class="mb-3">
-                        <label for="cpf" class="form-label">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" value="'.$funcionario['cpf'].'" required>
+                    <br>
+                        <label for="nome" class="form-label">Nome (Não pode editar)</label>
+                        <input type="text" readonly class="form-control" id="nome" name="nome" value="'.$funcionario['nome'].'" required>
                     </div>
+                    <label for="funcional" class="form-label">Funcional (Não pode editar)</label>
+                    <input readonly class="form-control" name="funcional" value="'.$funcionario['funcional'].'">
                     <div class="mb-3">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" value="'.$funcionario['nome'].'" required>
+                        <label for="cpf" class="form-label">CPF (Não pode editar)</label>
+                        <input type="text" readonly class="form-control" id="cpf" name="cpf" value="'.$funcionario['cpf'].'" required>
                     </div>
                     <div class="mb-3">
                         <label for="telefone" class="form-label">Telefone</label>
@@ -74,9 +77,11 @@
                         <input type="text" class="form-control" id="endereco" name="endereco" value="'.$funcionario['endereco'].'" required>
                     </div>
                     <div class="mb-3">
-                    <br><br>
                      <label for="datetime">Data e Hora:</label><br>
                      <input type="datetime-local" id="datetime" name="dataHora" value="'.$funcionario['dataHora'].'" required><br><br>
+                    <div class="mb-3">
+                     <label>Imagem:</label><br>
+                     <input name="upload" type="file" accept="image/png, image/jpeg, image/jpg"  multiple' .$funcionario['caminho'].'" required><br><br>
 
                     <label for="codCargo" class="form-label">Cargo</label>
                     <select class="form-select" id="codCargo" name="codCargo" required>'; 
@@ -102,7 +107,7 @@
 
        
         ?>
-        <a href="consultaFuncionario.php" class="btn btn-secondary mt-3">Voltar</a>
+        <a href="consultaFuncionario.php" class="btn btn-secondary mt-3">Voltar</a><br><br>
     </div>
     <footer>
             Gisele Araújo, Matheus Santos e Pedro Henrique.

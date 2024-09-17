@@ -41,7 +41,7 @@
   </header>
   <hr>
     <main>
-        <form method="POST" action="../../controller/create/recebeFuncionario.php">
+        <form method="POST" action="../../controller/create/recebeFuncionario.php" enctype="multipart/form-data">
           <section id="funcionario">
             <center>
                 <div style="height: 8vh;"></div>
@@ -54,18 +54,18 @@
 
           <label for="exampleInputEmail1" class="form-label">Digite CPF:</label>
           <input type="text" class="form-control" id="exampleInputEmail1" name="txtCpf" 
-          aria-describedby="emailHelp" style="border: solid black 1px; width: 70%; border-radius: 0%;" required maxlength="11"><br>
+          aria-describedby="emailHelp" style="border: solid black 1px; width: 70%; border-radius: 0%;" required maxlength="11" size= "11"><br>
 
           <label for="exampleInputEmail1" class="form-label">Digite telefone:</label>
           <input type="text" class="form-control" id="exampleInputEmail1" name="txtTelefone" 
-          aria-describedby="emailHelp" style="border: solid black 1px; width: 70%; border-radius: 0%;" required maxlength="15"><br>
+          aria-describedby="emailHelp" style="border: solid black 1px; width: 70%; border-radius: 0%;" required maxlength="15" size="15"><br>
 
           <label for="exampleInputEmail1" class="form-label">Digite endereço:</label>
           <input type="text" class="form-control" id="exampleInputEmail1" name="txtEndereco" 
           aria-describedby="emailHelp" style="border: solid black 1px; width: 70%; border-radius: 0%;" required maxlength="70"><br>
           
           <label>SELECIONE O ARQUIVO</label>
-        <input name="upload" type="file"><br><br>
+        <input name="upload" type="file" accept="image/png, image/jpeg"  multiple><br><br>
         
           <select name="txtCargo">
             <?php
