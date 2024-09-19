@@ -47,7 +47,7 @@
 
         $controller = new alteraFuncionario();
 
-        $funcionario = $controller->getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo);
+        $funcionario = $controller->getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $caminho);
 
         $cargos = $controller->consultarCargo();
 
@@ -81,7 +81,7 @@
                      <input type="datetime-local" id="datetime" name="dataHora" value="'.$funcionario['dataHora'].'" required><br><br>
                     <div class="mb-3">
                      <label>Imagem:</label><br>
-                     <input name="upload" type="file" accept="image/png, image/jpeg, image/jpg"  multiple' .$funcionario['caminho'].'" required><br><br>
+                     <input name="upload" type="file" accept="image/png, image/jpeg, image/jpg"  value="'.$funcionario['caminho'].'" required><br><br>
 
                     <label for="codCargo" class="form-label">Cargo</label>
                     <select class="form-select" id="codCargo" name="codCargo" required>'; 
@@ -107,7 +107,7 @@
 
        
         ?>
-        <a href="consultaFuncionario.php" class="btn btn-secondary mt-3">Voltar</a><br><br>
+        <a href="../read/consultaFuncionario.php" class="btn btn-secondary mt-3">Voltar</a><br><br>
     </div>
     <footer>
             Gisele Araújo, Matheus Santos e Pedro Henrique.

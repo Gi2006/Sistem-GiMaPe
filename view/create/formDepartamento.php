@@ -11,35 +11,12 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
      crossorigin="anonymous"></script>
      <link rel="stylesheet" href="../style.css">
+     <script defer src="../js/header.js"></script>
+     <link rel="stylesheet" href="../js/header.css">
 </head>
 <body class="fundo">
-<header>
-  <nav class="nav-header">
-          <ul>
-              <li><a href="../../index.html">Home</a></li>
-              <li>
-                  <div class="dropdown">
-                      <button onclick="myFunction()" class="dropbtn">Cadastro</button>
-                      <div id="myDropdown" class="dropdown-content">
-                        <a href="formCargo.php">Cargo</a>
-                        <a href="formDepartamento.php">Departamento</a>
-                        <a href="formFuncionario.php">Funcionário</a>
-                      </div>
-                    </div>
-                    </li>  
-                <li><div class="dropdown">
-                  <button onclick="myFunction()" class="dropbtn">Consulta</button>
-                  <div id="myDropdown" class="dropdown-content">
-                    <a href="../read/consultaCargo.php">Cargo</a>
-                    <a href="../read/consultaDepartamento.php">Departamento</a>
-                    <a href="../read/consultaFuncionario.php">Funcionário</a>
-                  </div>
-                </div>
-                </li>
-          </ul>
-      </nav>
-  </header>
-  <hr>
+<main-header></main-header>
+
     <main>
         <form method="POST" action="../../controller/create/recebeDepartamento.php">
             <center>

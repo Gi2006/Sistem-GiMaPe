@@ -8,8 +8,8 @@ class alteraFuncionario {
         $this->model = new Funcionario();
     }
 
-    public function getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo) {
-        return $this->model->getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo);
+    public function getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $caminho) {
+        return $this->model->getFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $caminho);
     }
     public function alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora, $caminho) {
         return $this->model->alterarFuncionario($funcional, $cpf, $nome, $telefone, $endereco, $codDepartamento, $codCargo, $dataHora, $caminho);
