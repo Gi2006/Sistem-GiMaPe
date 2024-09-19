@@ -26,6 +26,7 @@
                   <a href="formCargo.php">Cargo</a>
                   <a href="formDepartamento.php">Departamento</a>
                   <a href="formFuncionario.php">Funcionário</a>
+                  <a href="formLogin.php">Login</a>
                 </div>
               </div>
             </li>  

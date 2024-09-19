@@ -92,7 +92,7 @@ if(isset($_FILES['upload']))
     $arquivoUpload = move_uploaded_file($arquivo["tmp_name"],$caminho);
     $func->validaFuncionario($cpf, $nome, $telefone,
     $endereco, $codDepartamento, $codCargo,
-     $dataHora,$caminho,NovoUpload: $NovoUpload);
+     $dataHora,$caminho,$NovoUpload);
 
        
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Departamento</title>
+    <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous">
@@ -15,7 +15,7 @@
 <body class="fundo">
 <header>
   <nav class="nav-header">
-          <li>
+          <ul>
               <li><a href="../../index.html">Home</a></li>
               <li>
                   <div class="dropdown">
@@ -24,6 +24,7 @@
                         <a href="formCargo.php">Cargo</a>
                         <a href="formDepartamento.php">Departamento</a>
                         <a href="formFuncionario.php">Funcionário</a>
+                        <a href="formLogin.php">Login</a>
                       </div>
                     </div>
                     </li>  
@@ -35,13 +36,28 @@
                     <a href="../read/consultaFuncionario.php">Funcionário</a>
                   </div>
                 </div>
-                </li><a href="formlogin.php">Login</a></li>
+                </li>
           </ul>
       </nav>
   </header>
   <hr>
     <main>
-
+      <center>
+        <div style="height: 18vh;"></div>
+                <div class="centro" style="height: 330px; border: solid black 5px; width: 40%; padding: 30px 30px; border-radius: 20px;"> 
+                <h1>Login</h1>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Digite a senha:</label><br>
+              <input type="text" class="txtSenha" name="txtSenha" aria-describedby="emailHelp"
+              style="border: solid black 1px;  " required maxlength="70" ><br><br>
+              <label for="exampleInputEmail1" class="form-label">Digite o funcional:</label><br>
+              <input type="text" class="txtFuncional" name="txtFuncional" aria-describedby="emailHelp"
+              style="border: solid black 1px;" required maxlength="70" ><br><br>
+          <button type="submit" class="btn btn-primary">Enviar</button> </div>
+          
+        </div>
+        </form>
+      </center>
     </main>
     <footer>
             Gisele Araújo, Matheus Santos e Pedro Henrique.
